@@ -24,6 +24,20 @@ Originally I created a pull request to Bitwarden ([https://github.com/bitwarden/
   [this](https://www.rust-lang.org/tools/install) guide.
 * run `cargo install cha-rs`
 
+### From source
+* Build and install the executable from the source code.
+```bash
+git clone https://github.com/jj-style/cha-rs.git
+cd cha-rs
+cargo install --path .
+```
+
+### Docker
+```bash
+docker pull ghcr.io/jj-style/cha-rs:latest
+echo hello | docker run --rm -i cha-rs -c 1 -c 3 -c 5
+```
+
 ## Contribution
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
