@@ -12,7 +12,7 @@ use error::ExtractError;
 /// ```
 pub fn extract(input: &str, indices: &[usize]) -> Result<Vec<char>, ExtractError> {
     if indices.is_empty() {
-        return Err(ExtractError::NoIndices)
+        return Err(ExtractError::NoIndices);
     }
     if indices.iter().any(|i| i == &0 || i > &input.len()) {
         return Err(ExtractError::OutOfRange(input.len()));
