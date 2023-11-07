@@ -1,3 +1,6 @@
+mod error;
+use error::ExtractError;
+
 /// Extract the characters at the given indices from the input string.
 ///
 /// # Examples
@@ -7,12 +10,12 @@
 /// let chars = extract("hello", &[1,5]).unwrap();
 /// assert_eq!(chars, &['h', 'o']);
 /// ```
-pub fn extract(input: &str, indices: &[usize]) -> Result<Vec<char>, &'static str> {
+pub fn extract(input: &str, indices: &[usize]) -> Result<Vec<char>, ExtractError> {
     if indices.is_empty() {
-        return Err("must provide at least one index to extract");
+        return Err(ExtractError::NoIndices)
     }
     if indices.iter().any(|i| i == &0 || i > &input.len()) {
-        return Err("all indices must be within the range of the input");
+        return Err(ExtractError::OutOfRange(input.len()));
     }
 
     let c: Vec<char> = input

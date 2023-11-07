@@ -25,7 +25,7 @@ fn main() {
             }
         }
         Err(e) => {
-            eprint!("error: {:?}", e);
+            eprint!("error: {}", e.to_string());
             exit(1);
         }
     }
