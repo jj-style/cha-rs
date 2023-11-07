@@ -41,3 +41,6 @@ echo hello | docker run --rm -i cha-rs -c 1 -c 3 -c 5
 ## Contribution
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Notes
+Project template generated using [https://rust-github.github.io/](https://rust-github.github.io/).
