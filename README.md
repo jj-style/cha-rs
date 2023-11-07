@@ -14,7 +14,7 @@ $ bw get password <mybank> | cha-rs -c 3 -c 11 -c 16
 ```
 (Please note, those characters are made up and do not belong to any of my passwords! :D)
 
-Originally I created a pull request to Bitwarden ([https://github.com/bitwarden/clients/pull/5042](https://github.com/bitwarden/clients/pull/5042)) to add this functionality to the command line app. But That feels a bit over-engineered and it feels more inline with the [Unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy) to create a small program that does one thing well, accepting text as its input, and writing text as its output. So here it is!  
+Originally I created a pull request to Bitwarden ([https://github.com/bitwarden/clients/pull/5042](https://github.com/bitwarden/clients/pull/5042)) to add this functionality to the command line app. But that feels a bit over-engineered and it is more inline with the [Unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy) to create a small program that does one thing well, accepting text as its input, and writing text as its output. So here it is!  
 
 ## Installation
 
