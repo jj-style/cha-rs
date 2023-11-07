@@ -1,4 +1,4 @@
-mod error;
+pub mod error;
 use error::ExtractError;
 
 /// Extract the characters at the given indices from the input string.
