@@ -1,6 +1,6 @@
 [package]
 name = "cha-rs"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2021"
 description = "Extract specific characters from an input."
 license = "GPL-3.0"
