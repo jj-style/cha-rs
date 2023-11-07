@@ -35,7 +35,7 @@ cargo install --path .
 ### Docker
 ```bash
 docker pull ghcr.io/jj-style/cha-rs:latest
-echo hello | docker run --rm -i cha-rs -c 1 -c 3 -c 5
+echo hello | docker run --rm -i ghcr.io/jj-style/cha-rs -c 1 -c 3 -c 5
 ```
 
 ## Contribution
