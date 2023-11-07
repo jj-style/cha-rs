@@ -1,0 +1,68 @@
+name: CI # Continuous Integration
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+
+  test:
+    name: Test Suite
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - uses: taiki-e/install-action@just
+      - name: Run tests
+        run: just test
+
+  rustfmt:
+    name: Rustfmt
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt
+      - uses: Swatinem/rust-cache@v2
+      - uses: taiki-e/install-action@just
+      - name: Check formatting
+        run: just fmt-check
+
+  clippy:
+    name: Clippy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy
+      - uses: Swatinem/rust-cache@v2
+      - uses: taiki-e/install-action@just
+      - name: Clippy check
+        run: just lint
+
+  docs:
+    name: Docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - uses: taiki-e/install-action@just
+      - name: Check documentation
+        env:
+          RUSTDOCFLAGS: -D warnings
+        run: just doc-check
+
